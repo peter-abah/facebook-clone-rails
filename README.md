@@ -1,24 +1,14 @@
-# README
+# Social Media
+This is a social media website inspired by facebook. It is created as part of [The Odin Project's](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/final-project) curriculum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Still in development**
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Users can
+- sign in or sign up using email or their facebook account
+- create a profile with photo
+- create posts (as text or images)
+- like posts
+- comment on posts
+- send friend requests
+- accept friend requests and become friends
+- can see all recent posts from friends
