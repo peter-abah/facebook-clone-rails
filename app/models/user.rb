@@ -10,10 +10,23 @@ class User < ApplicationRecord
                                       foreign_key: :receiver_id,
                                       dependent: :destroy
 
-  has_many :friendships
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id
+  has_many :friendships, dependent: :destroy
+  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: :friend_id,
+                                 dependent: :destroy
 
   def friends
     friendships.map(&:friend) + inverse_friendships.map(&:user)
+  end
+
+  def add_friend(friend_request)
+    Friendship.create(user_id: friend_request.sender_id,
+                      friend_id: friend_request.receiver_id)
+    friend_request.destroy
+  end
+
+  def remove_friend(friend)
+    friendship = friendships.find_by(friend_id: friend.id) ||
+                  inverse_friendships.find_by(user_id: friend.id)
+    friendship.destroy
   end
 end
