@@ -20,8 +20,19 @@ RSpec.describe User, type: :model do
     it 'should create a mutual friendship' do
       friend_request = FriendRequest.create!(sender_id: user2.id, receiver_id: user1.id)
       user1.accept_request(friend_request)
+
       expect(user1.friends).to include(user2)
       expect(user2.friends).to include(user1)
+    end
+  end
+
+  describe '#remove_friend' do
+    it 'should stop users from being mutual friends' do
+      Friendship.create(user_id: user1.id, friend_id: user2.id)
+
+      user1.remove_friend(user2)
+      expect(user1.friends).not_to include(user2)
+      expect(user2.friends).not_to include(user1)
     end
   end
 end

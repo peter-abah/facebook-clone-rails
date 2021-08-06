@@ -18,21 +18,24 @@ class User < ApplicationRecord
     friendships.map(&:friend) + inverse_friendships.map(&:user)
   end
 
+  def send_request(user)
+    sent_friend_requests.build(receiver_id: user.id)
+  end
+
   def accept_request(friend_request)
-    Friendship.create(user_id: friend_request.sender_id,
-                      friend_id: friend_request.receiver_id)
+    friendships.create!(friend_id: friend_request.sender_id)
     friend_request.destroy
   end
 
   def delete_request(friend_request)
     raise unless friend_request.sender == self || friend_request.receiver == self
-    
+
     friend_request.delete
   end
 
   def remove_friend(friend)
-    friendship = friendships.find_by(friend_id: friend.id) ||
-                  inverse_friendships.find_by(user_id: friend.id)
+    friendship = friendships.find_by(friend_id: friend.id) || 
+                 inverse_friendships.find_by!(user_id: friend.id)
     friendship.destroy
   end
 end
