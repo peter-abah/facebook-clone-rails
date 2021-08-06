@@ -16,10 +16,10 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe '#add_friend' do
+  describe '#accept_request' do
     it 'should create a mutual friendship' do
       friend_request = FriendRequest.create!(sender_id: user2.id, receiver_id: user1.id)
-      user1.add_friend(friend_request)
+      user1.accept_request(friend_request)
       expect(user1.friends).to include(user2)
       expect(user2.friends).to include(user1)
     end
