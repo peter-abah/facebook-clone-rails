@@ -35,4 +35,16 @@ RSpec.describe User, type: :model do
       expect(user2.friends).not_to include(user1)
     end
   end
+
+  describe '#all_posts' do
+    it 'should return all posts of user and friends' do
+      Friendship.create(user_id: user1.id, friend_id: user2.id)
+
+      post1 = user1.posts.create(body: 'First post')
+      post2 = user2.posts.create(body: 'Second post')
+      user3.posts.create(body: 'Third post')
+
+      expect(user1.all_posts).to eq([post1, post2])
+    end
+  end
 end

@@ -18,6 +18,11 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
+  def all_posts
+    friends_posts = friends.reduce([]) { |post_arr, friend| post_arr.concat(friend.posts) }
+    (friends_posts + posts).sort { |post_a, post_b| post_a.updated_at <=> post_b.updated_at }
+  end
+
   def friends
     friendships.map(&:friend) + inverse_friendships.map(&:user)
   end
