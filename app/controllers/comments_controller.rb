@@ -30,6 +30,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
+    redirect_to @comment.post
   end
 
   private
