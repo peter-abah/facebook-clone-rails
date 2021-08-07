@@ -1,0 +1,120 @@
+$primary-color: #42b72a;
+$secondary-color: #1877f2;
+$primary-color-dark: #32a71a;
+$secondary-color-dark: #0867e2;
+$primary-color-light: #e9ffe9;
+$secondary-color-light: #f0f2f5;
+
+.login-parent {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+  background-color: $primary-color-light;
+}
+
+.login-container {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  margin: auto
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 4rem;
+  padding: 1rem;
+}
+
+.login-logo {
+  color: $primary-color;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.welcome-message {
+  color: #222;
+  font-size: 1.5rem;
+  font-family: Helvetica, sans-serif;
+  width: 28rem;
+}
+
+.login-form-container {
+  background-color: #FFF;
+  display: flex;
+  -webkit-box-shadow: 0px 0px 10px 2px rgba(240,240,240,0.67);
+     -moz-box-shadow: 0px 0px 10px 2px rgba(240,240,240,0.67);
+          box-shadow: 0px 0px 10px 2px rgba(240,240,240,0.67);
+  border-radius: 8px;
+  flex-direction: column;
+  padding: .5rem 1rem 1.5rem;
+}
+
+.login-field {
+  background-color: #FFF;
+  border-radius: 8px;
+  border: 1px solid #dddfe2;
+  font-size: 1.0625rem;
+  padding: 14px 1rem;
+  height: 3.25rem;
+  width: 22.5rem;
+  margin: .5rem 0;
+}
+
+.login-input:focus, .login-input:focus {
+  border-color: $primary-color;
+  outline: none;
+}
+
+.login-input::placeholder {
+  color: #CCC;
+}
+
+.login-button {
+  color: #FFF;
+  background-color: $primary-color;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.login-button:hover {
+  background-color: $primary-color-dark;
+  cursor: pointer;
+}
+
+.login-separator {
+  height: 1px;
+  border: 1px solid #DDD;
+  width: 22.5rem;
+  margin: 1rem 0;
+}
+
+.sign-up-link {
+  align-items: center;
+  background-color: $secondary-color;
+  border-radius: 8px;
+  color: #FFF;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  height: 3.25rem;
+  justify-content: center;
+  margin: auto;
+  text-decoration: none;
+  width: 11rem;
+}
+
+.sign-up-link:hover {
+  background-color: $secondary-color-dark;
+  cursor: pointer;
+}
+
+.login-error-message {
+  color: red;
+  padding: 0 1rem;
+}

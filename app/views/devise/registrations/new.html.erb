@@ -1,29 +1,42 @@
-<h2>Sign up</h2>
+<div class="login-parent">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="login-container">
+    <header class="login-header">
+      <div class="login-logo">
+        <p class="logo-text">Social media</p>
+      </div>
+      <h2 class="welcome-message">
+        Connect and share with people in your life
+      </h2>
+    </header>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="login-form-container">
+      <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), class: 'login-form' do |f| %>
+
+        <div class="login-field-container">
+          <%= f.text_field :name, placeholder: 'Name', autofocus: true, class: 'login-field login-input' %>
+          <%= render partial: 'devise/shared/error_messages', locals: {resource: resource, symbol: :name} %>
+        </div>
+
+        <div class="login-field-container">
+          <%= f.text_field :email, placeholder: 'Email', class: 'login-field login-input' %>
+          <%= render partial: 'devise/shared/error_messages', locals: {resource: resource, symbol: :email} %>
+        </div>
+
+        <div class="login-field-container">
+          <%= f.password_field :password, placeholder: 'password', class: 'login-field login-input' %>
+          <%= render partial: 'devise/shared/error_messages', locals: {resource: resource, symbol: :password} %>
+        </div>
+
+        <div class="login-field-container">
+          <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'login-field login-input' %>
+          <%= render partial: 'devise/shared/error_messages', locals: {resource: resource, symbol: :password_confirmation} %>
+        </div>
+
+        <div class="login-field-container">
+          <%= f.submit 'Sign up', class: 'login-field login-button' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
