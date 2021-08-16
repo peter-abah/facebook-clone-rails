@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = current_user.all_posts
+    @post = current_user.posts.build
   end
 
   def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to posts_path
     else
       render :new
     end

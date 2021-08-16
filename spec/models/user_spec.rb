@@ -47,4 +47,31 @@ RSpec.describe User, type: :model do
       expect(user1.all_posts).to eq([post1, post2])
     end
   end
+
+  describe '#liked_post?' do
+    let(:post) { user1.posts.create!(body: 'filler') }
+    before do
+      post.likes.create!(user_id: user2.id)
+    end
+
+    it 'should return false if user has not liked post' do
+      result = user1.liked_post?(post)
+      expect(result).to be_falsey
+    end
+
+    it 'should return true if user has liked post' do
+      result = user2.liked_post?(post)
+      expect(result).to be_truthy
+    end
+  end
+
+  describe '#like_for_post' do
+    it 'should return like for post' do
+      post = user1.posts.create!(body: 'filler')
+      post.likes.create!(user_id: user2.id)
+      
+      like = user2.like_for_post(post)
+      expect(like.user_id).to eq user2.id
+    end
+  end
 end

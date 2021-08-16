@@ -49,4 +49,12 @@ class User < ApplicationRecord
                  inverse_friendships.find_by!(user_id: friend.id)
     friendship.destroy
   end
+
+  def liked_post?(post)
+    !like_for_post(post).nil?
+  end
+
+  def like_for_post(post)
+    likes.find_by(post_id: post.id)
+  end
 end
