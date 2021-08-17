@@ -5,7 +5,7 @@
   <%= form_with model: post do |f| %>
     <p class="user-info"><%= current_user.name %></p>
     <div class="post-text">
-      <%= f.text_field :body, placeholder: true, autofocus: true, class: 'post-test-field' %>
+      <%= f.text_area :body, placeholder: true, autofocus: true, class: 'post-test-field' %>
     </div>
 
     <%= f.submit 'Post', class: 'post-form-button' %>

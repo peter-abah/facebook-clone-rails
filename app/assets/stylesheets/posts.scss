@@ -1,3 +1,47 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$black-font: #050505;
+$gray-font: #65676B;
+
+.posts-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 31.25rem; // 500px when root font size = 16px
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.post-info {
+  margin: .5rem auto 0;
+}
+
+.post-user-name, .post-text {
+  color: $black-font;
+  font-size: 0.9375rem; // 15px when the root font size = 16px
+}
+
+.post-user-name {
+  font-weight: 600;
+}
+
+.post-time {
+  color: $gray-font;
+  font-size: 0.8125rem; // 13px
+  font-weight: 400;
+}
+
+.post-text {
+  margin: .5rem auto;
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: space-around;
+}

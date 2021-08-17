@@ -9,11 +9,11 @@
   <p class="post-text"><%= post.body %></p>
 
   <div class="post-buttons">
-    <%= render partial: 'like_post', locals: {post: post} %>
+    <%= render partial: 'like_button', locals: {post: post} %>
     
     <%= link_to post do %>
       <div class="comment-button">
-        <%= fa_icon 'comment' %> 
+        <i class="fa fa-comment"></i>
       </div>
     <% end %>
   </div>

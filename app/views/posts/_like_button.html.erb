@@ -1,0 +1,13 @@
+<% if current_user.liked_post?(post) %>
+  <%= link_to current_user.like_for_post(post), method: :delete, class: 'like-button'  do %>
+    <i class="fa fa-heart"></i> <%= post.likes.count %>
+  <% end %>
+
+<% else %>
+  <%= form_with model: [post, post.likes.build] do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= button_tag type: :submit, class: 'like-button' do %>
+      <i class="fa fa-heart"></i> <%= post.likes.count %>
+    <% end %>
+  <% end %>
+<% end %>

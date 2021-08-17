@@ -14,3 +14,8 @@
  *= require_self
  *= require font-awesome
  */
+
+ body {
+  background-color: #e9ffe9;
+  font-family: sans-serif;
+ }
