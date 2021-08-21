@@ -1,6 +1,44 @@
 <nav class="main-nav">
-  <div class="logo"></div>
-  <div class="search-bar"></div>
-  <nav class="menu-buttons"></nav>
-  <nav class="user-buttons"></nav>
+  <div class="logo-container">
+    <p class="logo">Social media</p>
+  </div>
+
+
+  <nav class="menu-buttons">
+    <div class="menu-button">
+      <%= link_to root_path do %>
+        <%= material_icon.home.md_24 %>
+      <% end %>
+    </div>
+
+    <div class="menu-button">
+      <%= link_to '#' do %>
+        <%= material_icon.search.md_24 %>
+      <% end %>
+    </div>
+
+    <div class="menu-button">
+      <%= link_to '#' do %>
+        <%= material_icon.notifications.md_24 %>
+      <% end %>
+    </div>
+
+    <div class="menu-button">
+      <%= link_to '#' do %>
+        <%= material_icon.people.md_24 %>
+      <% end %>
+    </div>
+  </nav>
+  <nav class="user-buttons">
+    <div class="user-button">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        Logout
+      <% end %>
+    </div>
+    <div class="user-button">
+      <%= link_to '#' do %>
+        <%= material_icon.person.md_24 %>
+      <% end %>
+    </div>
+  </nav>
 </nav>

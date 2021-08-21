@@ -1,9 +1,6 @@
 <%= render partial: 'shared/nav_bar' %>
 
-<%= render partial: 'post_form', locals: {post: @post} %>
-
-<div class="posts-container">
-  <% @posts.each do |post| %>
-    <%= render post %>
-  <% end %>
+<div class="posts-sidebar-container">
+  <%= render 'sidebar' %>
+  <%= render partial: 'posts', locals: { posts: @posts } %>
 </div>

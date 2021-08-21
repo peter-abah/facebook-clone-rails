@@ -1,0 +1,49 @@
+@import 'variables';
+
+.single-post-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 6rem;
+}
+
+.post-with-comments {
+  grid-column: 2 / 3;
+  margin: auto;
+}
+
+.post-container {
+  background-color: white;
+  border-radius: 8px;
+  width: 31.25rem; // 500px when root font size = 16px
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.post-info {
+  margin: .5rem auto 0;
+}
+
+.post-user-name, .post-text {
+  color: $black-font;
+  font-size: 0.9375rem; // 15px when the root font size = 16px
+}
+
+.post-user-name {
+  font-weight: 600;
+}
+
+.post-time {
+  color: $gray-font;
+  font-size: 0.8125rem; // 13px
+  font-weight: 400;
+}
+
+.post-text {
+  margin: .5rem auto;
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: space-around;
+}

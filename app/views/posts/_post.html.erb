@@ -13,7 +13,8 @@
     
     <%= link_to post do %>
       <div class="comment-button">
-        <i class="fa fa-comment"></i>
+        <%= material_icon.chat_bubble_outline %>
+        <%= post.comments.count if post.comments.count.positive? %>
       </div>
     <% end %>
   </div>

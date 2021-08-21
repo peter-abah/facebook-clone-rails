@@ -12,10 +12,11 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
+ *= require material_icons
  */
+@import 'variables';
 
- body {
-  background-color: #e9ffe9;
+body {
+  background-color: $primary-color-light;
   font-family: sans-serif;
- }
+}

@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.8'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
-gem "font-awesome-rails"
+gem 'material_icons'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

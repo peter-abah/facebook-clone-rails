@@ -1,0 +1,10 @@
+<div class="comments-container">
+  <% comments.each do |comment| %>
+    <% next if comment.id.nil? %>
+    
+    <div class="comment">
+      <p class="comment-user-name"><%= comment.user.name %></p>
+      <p class="comment-body"><%= comment.body %></p>
+    </div>
+  <% end %>
+</div>

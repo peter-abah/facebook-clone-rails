@@ -20,6 +20,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
+  has_one_attached :profile_picture
+
   def all_posts
     friends_posts = friends.reduce([]) { |post_arr, friend| post_arr.concat(friend.posts) }
     (friends_posts + posts).sort { |post_a, post_b| post_a.updated_at <=> post_b.updated_at }
