@@ -2,9 +2,6 @@
 
 .main-nav {
   background-color: #FFF;
-  -webkit-box-shadow: 0px 0px 10px 4px rgba(240,240,240,0.67);
-     -moz-box-shadow: 0px 0px 10px 4px rgba(240,240,240,0.67);
-          box-shadow: 0px 0px 10px 4px rgba(240,240,240,0.67);
   display: flex;
   height: 4rem;
   justify-content: space-around;
@@ -41,4 +38,18 @@
 
 .user-button {
   margin: auto;
+}
+
+.material-icons.nav-icon {
+  color: $primary-color-dark;
+  font-size: 1.75rem;
+}
+
+.logout {
+  color: red;
+}
+
+.material-icons.logout {
+  color: red;
+  font-weight: 600;
 }

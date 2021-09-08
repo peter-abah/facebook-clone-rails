@@ -59,4 +59,8 @@ class User < ApplicationRecord
   def like_for_post(post)
     likes.find_by(post_id: post.id)
   end
+
+  def profile_picture
+    super.attached? ? super : 'default_profile_image'
+  end
 end

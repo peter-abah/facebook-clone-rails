@@ -1,3 +1,63 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.comments-and-form {
+  width: 31.25rem;
+  background-color: #FFF;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem;
+}
+
+.comment-form {
+  margin: 0 auto 1rem;
+  position: relative;
+}
+
+.comment-text-area {
+  background-color: $secondary-color-light;
+  color: $black-color;
+  width: 90%;
+  height: 5rem;
+  resize: none;
+  overflow: auto;
+  border-radius: .5rem;
+  border: none;
+  padding: .5rem;
+}
+
+.comment-text-area:focus {
+  outline: none;
+}
+
+.submit-comment {
+  background-color: $secondary-color-light;
+  border: none;
+  color: $primary-color;
+  position: absolute;
+  bottom: .5rem;
+  right: .5rem;
+  cursor: pointer;
+}
+
+.comment-body {
+  background-color: $secondary-color-light;
+  color: $black-color;
+  font-size: 0.9375rem; // 15px
+  font-weight: 400;
+  width: 90%;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  margin-left: 2.5rem;
+  border-radius: .5rem;
+
+  // prevent overflow of really long words
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.comment-user-name {
+  font-weight: 500;
+}

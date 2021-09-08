@@ -23,3 +23,16 @@
   left: 0;
   top: 6rem;
 }
+
+.sidebar-child {
+  width: 18rem;
+  height: 2.75rem;
+  margin: 1rem auto;
+}
+
+.sidebar-text {
+  color: $black-color;
+  font-weight: 500;
+  width: fit-content;
+  margin: 0 1rem;
+}

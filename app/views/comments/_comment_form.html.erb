@@ -1,5 +1,8 @@
-<%= form_with model: [post, post.comments.build ] do |f| %>
+<%= form_with model: [post, post.comments.build ], class: 'comment-form' do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.text_area :body, placeholder: 'Share your thoughts' %>
-  <%= f.submit 'Comment' %>
+  <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image' %>
+  <%= f.text_area :body, placeholder: 'Share your thoughts', class: 'comment-text-area' %>
+  <%= button_tag type: :submit, class: 'submit-comment' do %>
+    <%= material_icon.send %> comment
+  <% end %> 
 <% end %>

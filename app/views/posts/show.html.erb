@@ -3,7 +3,10 @@
 <div class="single-post-container">
   <div class="post-with-comments">
     <%= render partial: 'post', locals: { post: @post } %>
-    <%= render partial: 'comments/comment_form', locals: { post: @post } %>
-    <%= render partial: 'comments/comments', locals: { comments: @post.comments } %>
+    
+    <div class="comments-and-form">
+      <%= render partial: 'comments/comment_form', locals: { post: @post } %>
+      <%= render partial: 'comments/comments', locals: { comments: @post.comments } %>
+    </div>
   </div>
 </div>

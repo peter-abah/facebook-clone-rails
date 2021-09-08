@@ -1,5 +1,6 @@
 <div class="post-container">
   <div class="post-info">
+    <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image' %>
     <div class="post-user">
       <p class="post-user-name"><%= post.user.name %></p>
     </div>
@@ -11,11 +12,11 @@
   <div class="post-buttons">
     <%= render partial: 'like_button', locals: {post: post} %>
     
-    <%= link_to post do %>
-      <div class="comment-button">
-        <%= material_icon.chat_bubble_outline %>
+    <div class="comment-button">
+      <%= link_to post do %>
+        <%= material_icon.chat_bubble_outline %> 
         <%= post.comments.count if post.comments.count.positive? %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,14 +1,16 @@
 <% if current_user.liked_post?(post) %>
-  <%= link_to current_user.like_for_post(post), method: :delete, class: 'like-button'  do %>
-    <%= material_icon.favorite %>
-    <%= post.likes.count if post.likes.count.positive? %>
+  <div class="post-button like-button-link">
+    <%= link_to current_user.like_for_post(post), method: :delete  do %>
+      <%= material_icon.favorite %> 
+      <%= post.likes.count if post.likes.count.positive? %>
+    </div>
   <% end %>
 
 <% else %>
-  <%= form_with model: [post, post.likes.build] do |f| %>
+  <%= form_with model: [post, post.likes.build], class: 'like-form' do |f| %>
     <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= button_tag type: :submit, class: 'like-button' do %>
-      <%= material_icon.favorite %>
+    <%= button_tag type: :submit, class: 'like-button-form' do %>
+      <%= material_icon.favorite %> 
       <%= post.likes.count if post.likes.count.positive? %>
     <% end %>
   <% end %>
