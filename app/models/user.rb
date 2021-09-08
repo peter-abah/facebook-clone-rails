@@ -19,7 +19,6 @@ class User < ApplicationRecord
   has_many :likes
   has_many :posts
   has_many :comments
-
   has_one_attached :profile_picture
 
   def all_posts
