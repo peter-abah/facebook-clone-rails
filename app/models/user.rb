@@ -23,7 +23,11 @@ class User < ApplicationRecord
 
   def all_posts
     friends_posts = friends.reduce([]) { |post_arr, friend| post_arr.concat(friend.posts) }
-    (friends_posts + posts).sort { |post_a, post_b| post_a.updated_at <=> post_b.updated_at }
+    posts_for_user = friends_posts + posts
+
+    posts_for_user.sort do |post_a, post_b|
+      post_b.updated_at <=> post_a.updated_at
+    end
   end
 
   def friends

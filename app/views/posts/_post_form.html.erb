@@ -1,11 +1,28 @@
+<%= javascript_pack_tag 'post_form' %>
+
 <div class="post-form-container">
   <h3 class="post-form-title">Create Post</h3>
   <div class="post-form-separator"></div>
 
-  <%= form_with model: post do |f| %>
-    <p class="user-info"><%= current_user.name %></p>
-    <div class="post-text">
-      <%= f.text_area :body, placeholder: true, autofocus: true, class: 'post-test-field' %>
+  <%= form_with model: post, class: 'post-form' do |f| %>
+    <p class="user-info">
+      <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image' %>
+      <span class="post-form-user-name"><%= current_user.name %></span>
+    </p>
+    <div class="post-textarea">
+      <%= f.text_area :body, placeholder: 'What\'s on your mind', autofocus: true, class: 'post-test-field' %>
+    </div>
+    <div class="post-form-images">
+    </div>
+
+    <div class="post-attachment-buttons">
+      <p class="attachment-info">Add to your post</p>
+      <div class="image-field">
+        <%= f.label :images, class: 'image-field-label' do |builder| %>
+          <%= material_icon.image.md_36 %>
+        <% end %>
+        <%= f.file_field :images, class: 'image-input', multiple: true, accept: 'image/*' %>
+      </div>
     </div>
 
     <%= f.submit 'Post', class: 'post-form-button' %>

@@ -1,0 +1,115 @@
+@import 'variables';
+
+.post-form-container {
+  background-color: #FFF;
+  border-radius: 8px;
+  grid-column: 2/3;
+  justify-self: center;
+  width: 31.25rem;
+  padding: 1rem;
+}
+
+.post-form-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 0 1rem;
+}
+
+.post-form-separator {
+  border: solid  .1px #CCC;
+}
+
+.post-form {
+  margin-top: .5rem;
+}
+
+.user-info {
+  height: 2rem;
+  margin-bottom: .5rem;
+}
+
+.post-form-user-name {
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.post-textarea {
+  clear: left;
+  margin: 1rem 0;
+}
+
+.post-textarea textarea {
+  border: none;
+  height: 8rem;
+  width: 30rem;
+  margin: auto;
+  font-size: 1.3rem;
+  resize: none;
+}
+
+.post-textarea textarea:focus {
+  border: none;
+  outline: none;
+}
+
+.post-form-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.uploaded-image {
+  width: 30%;
+  height: 9rem;
+  height: max-content;
+  object-fit: cover;
+}
+
+.image-input {
+  opacity: 0;
+  width: .1px;
+  height: .1px;
+  position: absolute;
+}
+
+.post-attachment-buttons {
+  border: .5px solid #CCC;
+  border-radius: 8px;
+  margin: .5rem 0;
+  padding: .5rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.attachment-info {
+  font-size: .9375rem;
+  margin-right: auto;
+}
+
+.image-field-label {
+  display: block;
+  color: $primary-color-dark;
+  cursor: pointer;
+}
+
+.post-form-button {
+  width: 100%;
+  color: #FFF;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  height: 2rem;
+  margin-top: 1rem;
+}
+
+.post-form-button:hover {
+  background-color: $primary-color-dark;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+

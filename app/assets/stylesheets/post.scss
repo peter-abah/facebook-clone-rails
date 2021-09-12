@@ -18,7 +18,7 @@
   font-family: "Segoe UI", sans-serif;
   width: 31.25rem; // 500px when root font size = 16px
   margin-bottom: 2rem;
-  padding: 1rem 1rem 0;
+  padding: 1rem 1rem .5rem;
 }
 
 .post-info {
@@ -26,6 +26,7 @@
 }
 
 .user-profile-image {
+  display: block;
   border-radius: 50%;
   float: left;
   margin-right: .5rem;
