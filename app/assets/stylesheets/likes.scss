@@ -1,3 +1,33 @@
 // Place all the styles related to the likes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "variables";
+
+.like-form {
+  width: 50%;
+}
+
+.like-button-form {
+  width: 100%;
+  background-color: #FFF;
+  border: none;
+  color: $secondary-color;
+  cursor: pointer;
+}
+
+.like-button-form:hover {
+  color: $secondary-color-dark;
+}
+
+.like-button-link {
+  width: 50%;
+  text-align: center;
+}
+
+.like-button-link a, .comment-button a {
+  color: $primary-color;
+}
+
+.like-button-link a:hover, .comment-button a:hover {
+  color: $primary-color-dark;
+}

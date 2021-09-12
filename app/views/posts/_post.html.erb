@@ -6,8 +6,23 @@
     </div>
     <p class="post-time"><%= post_time(post) %> ago</p>
   </div>
+  
+  <div class="post-body">
+    <p class="post-text">
+      <%= post.body %>
+    </p>
 
-  <p class="post-text"><%= post.body %></p>
+    <% if post.images.attached? %>
+      <div class="post-images">
+        <% post.images.each do |image| %>
+          <div class="post-image">
+            <%= image_tag image %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
 
   <div class="post-buttons">
     <%= render partial: 'like_button', locals: {post: post} %>

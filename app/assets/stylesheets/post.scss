@@ -48,42 +48,23 @@
   font-weight: 400;
 }
 
+.post-body {
+  margin: .5rem auto 1rem;
+}
+
 .post-text {
   margin: .5rem auto;
+}
+
+.post-image img {
+  width: 100%;
+  max-height: 25rem;
+  object-fit: cover;
 }
 
 .post-buttons {
   display: flex;
   margin-bottom: 0.5rem;
-}
-
-.like-form {
-  width: 50%;
-}
-
-.like-button-form {
-  width: 100%;
-  background-color: #FFF;
-  border: none;
-  color: $secondary-color;
-  cursor: pointer;
-}
-
-.like-button-form:hover {
-  color: $secondary-color-dark;
-}
-
-.like-button-link {
-  width: 50%;
-  text-align: center;
-}
-
-.like-button-link a, .comment-button a {
-  color: $primary-color;
-}
-
-.like-button-link a:hover, .comment-button a:hover {
-  color: $primary-color-dark;
 }
 
 .material-icons {
