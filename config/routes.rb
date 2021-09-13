@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: %i[edit update destroy]
   resources :likes, only: %i[destroy]
+
+  get '/search', to: 'search#search'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

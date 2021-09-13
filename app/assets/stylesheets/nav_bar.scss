@@ -12,8 +12,12 @@
   z-index: 10;
 }
 
+
 .logo-container {
-  color: $primary-color;
+  a {
+    color: $primary-color-dark;
+  }
+
   font-size: 1.5rem;
   font-weight: 600;
   margin: auto;

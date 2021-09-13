@@ -1,12 +1,5 @@
 @import 'variables';
 
-.single-post-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: 1fr;
-  margin-top: 6rem;
-}
-
 .post-with-comments {
   grid-column: 2 / 3;
   margin: auto;
@@ -54,6 +47,16 @@
 
 .post-text {
   margin: .5rem auto;
+}
+
+.post-images {
+  display: grid;
+  grid-template-rows: 1fr minmax(0, min-content);
+  grid-auto-flow: column;
+}
+
+.post-images:first-child {
+
 }
 
 .post-image img {

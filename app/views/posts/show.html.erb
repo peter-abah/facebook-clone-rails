@@ -1,6 +1,8 @@
 <%= render 'shared/nav_bar' %>
 
-<div class="single-post-container">
+<div class="main-container">
+  <%= render 'sidebar' %>
+
   <div class="post-with-comments">
     <%= render partial: 'post', locals: { post: @post } %>
     

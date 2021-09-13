@@ -1,5 +1,3 @@
-<%= javascript_pack_tag 'post_form' %>
-
 <div class="post-form-container">
   <h3 class="post-form-title">Create Post</h3>
   <div class="post-form-separator"></div>
@@ -10,7 +8,7 @@
       <span class="post-form-user-name"><%= current_user.name %></span>
     </p>
     <div class="post-textarea">
-      <%= f.text_area :body, placeholder: 'What\'s on your mind', autofocus: true, class: 'post-test-field' %>
+      <%= f.text_area :body, placeholder: 'What\'s on your mind', class: 'post-test-field' %>
     </div>
     <div class="post-form-images">
     </div>
@@ -28,3 +26,5 @@
     <%= f.submit 'Post', class: 'post-form-button' %>
   <% end %>
 </div>
+
+<%= javascript_pack_tag 'post_form' %>
