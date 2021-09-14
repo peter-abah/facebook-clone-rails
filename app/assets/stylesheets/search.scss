@@ -1,3 +1,48 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "variables";
+
+.search-container {
+  grid-column: 2 / 3;
+  margin: auto;
+}
+
+.search-form {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 1rem;
+}
+
+.search-bar {
+  color: $black-color;
+  height: 3rem;
+  width: 30rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.material-icons.search-icon {
+  font-size: 28px;
+  color: $primary-color-dark;
+}
+
+.search-bar:focus {
+  outline: none;
+  border: none;
+}
+
+.search-button {
+  border: none;
+  background-color: #FFF;
+  position: absolute;
+  bottom: .5rem;
+  right: .5rem;
+}
+
+.search-result-users {
+  margin: 2rem auto;
+}
