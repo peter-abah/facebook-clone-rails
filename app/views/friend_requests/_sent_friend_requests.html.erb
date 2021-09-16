@@ -1,0 +1,9 @@
+<div class="sent-friend-requests">
+  <p class="friend-requests-title"> Sent friend requests</p>
+
+  <div class="sent-friend-requests-container">
+    <% friend_requests.each do |friend_request| %>
+      <%= render partial: 'users/user_card', locals: { user: friend_request.receiver } %>
+    <% end %>
+  </div>
+</div>

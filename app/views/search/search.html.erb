@@ -4,16 +4,7 @@
   <%= render 'shared/sidebar' %>
 
   <div class="search-container">
-    <div class="search-form-container">
-
-      <%= form_with url: '/search', method: :get, class: 'search-form' do |form| %>
-        <%= form.text_field :query, placeholder: 'Search', class: 'search-bar' %>
-        <%= button_tag type: :submit, class: 'search-button' do %>
-          <%= material_icon.search.css_class('search-icon') %>
-        <% end %>
-      <% end %>
-
-    </div>
+    <%= render 'search_form' %>
 
     <% if @posts %>
     <div class="search-result-container">
@@ -28,7 +19,7 @@
   </div>
 
   <% if @users %>
-    <div class="search-result-user">
+    <div class="search-result-users">
       <% @users.each do |user| %>
         <%= render partial: 'users/user_card', locals: { user: user } %>
       <% end %>

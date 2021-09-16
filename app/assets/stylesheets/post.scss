@@ -16,14 +16,11 @@
 
 .post-info {
   margin: .5rem auto;
+  display: flex;
 }
 
-.user-profile-image {
-  display: block;
-  border-radius: 50%;
-  float: left;
-  margin-right: .5rem;
-  vertical-align: middle;
+.post-user {
+  margin-left: .5rem;
 }
 
 .post-user-name, .post-text {

@@ -4,7 +4,7 @@
 @import 'variables';
 
 .main-container {
-  margin-top: 6rem;
+  margin-top: 4rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 1fr;
@@ -15,24 +15,39 @@
   display: flex;
   flex-direction: column;
   grid-column: 2 / 3;
+  margin: 1rem auto 2rem;
 }
 
 .sidebar {
   grid-column: 1 / 2;
   position: fixed;
   left: 0;
-  top: 6rem;
+  top: 4rem;
+  width: 25vw;
 }
 
 .sidebar-child {
   width: 18rem;
   height: 2.75rem;
-  margin: 1rem auto;
+  margin: 1rem;
+}
+
+.sidebar-child:hover {
+  background-color: $dark-hover-color;
+}
+
+.sidebar-child a {
+  display: flex;
+}
+
+.sidebar-icon {
+  align-self: center;
 }
 
 .sidebar-text {
   color: $black-color;
   font-weight: 500;
   width: fit-content;
-  margin: 0 1rem;
+  margin-left: 1rem;
+  padding: .75rem 0;
 }

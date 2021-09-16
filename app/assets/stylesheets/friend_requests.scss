@@ -1,0 +1,75 @@
+// Place all the styles related to the friend_requests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import 'variables';
+
+.received-friend-requests {
+  grid-column: 2 / 3;
+  margin: 1rem 0;
+  padding: 0 2rem;
+}
+
+.friend-requests-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem;
+}
+
+.friend-requests-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.friend-request-container {
+  width: 13.5rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 / 4;
+  margin: .5rem;
+}
+
+.friend-request-image {
+  width: 13.5rem;
+  height: 13.5rem;
+  border-top-left-radius: .5rem;
+  border-top-right-radius: .5rem;
+}
+
+.friend-request-info {
+  padding: .75rem;
+  border-bottom-left-radius: .5rem;
+  border-bottom-right-radius: .5rem;
+  background-color: #FFF;
+}
+
+.friend-request-link {
+  text-align: center;
+  padding: .5rem;
+  border-radius: .5rem;
+  margin: .5rem auto 0;
+  display: block;
+  height: 2.25rem;
+}
+
+.confirm-friend-request {
+  color: white;
+  background-color: $primary-color;
+}
+
+.delete-friend-request {
+  background-color: $primary-color-light;
+  color: $black-color;
+}
+
+.sent-friend-requests {
+  grid-column: 3 / 4;
+  background-color: white;
+  overflow-y: scroll;
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  bottom: 0;
+  width: 24vw;
+}

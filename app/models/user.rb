@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :sent_friend_requests, class_name: 'FriendRequest',
                                   foreign_key: :sender_id, dependent: :destroy
-  has_many :recieved_friend_requests, class_name: 'FriendRequest',
+  has_many :received_friend_requests, class_name: 'FriendRequest',
                                       foreign_key: :receiver_id,
                                       dependent: :destroy
 
@@ -30,12 +30,28 @@ class User < ApplicationRecord
     end
   end
 
+  def friend?(user)
+    friends.include?(user)
+  end
+
+  def sent_request?(friend)
+    sent_friend_requests.exists?(receiver_id: friend.id) || received_friend_requests.exists?(sender_id: friend.id)
+  end
+
+  def friend_requests
+    sent_friend_requests + recieved_friend_requests
+  end
+
   def friends
     friendships.map(&:friend) + inverse_friendships.map(&:user)
   end
 
+  def friend_request_for_user(user)
+    sent_friend_requests.find_by(receiver_id: user.id) || received_friend_requests.find_by(sender_id: user.id)
+  end
+
   def send_request(user)
-    sent_friend_requests.build(receiver_id: user.id)
+    sent_friend_requests.create!(receiver_id: user.id)
   end
 
   def accept_request(friend_request)

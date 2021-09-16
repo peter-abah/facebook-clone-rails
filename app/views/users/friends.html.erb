@@ -1,0 +1,18 @@
+<%= render 'shared/nav_bar' %>
+
+<div class="main-container">
+  <div class="friends-container">
+    <% if @friends.empty? %>
+      <p class="no-friends">
+        No friends to show
+      </p>
+    <% else %>
+      <% @friends.each do |friend| %>
+        <%= render partial: 'user_card', locals: { user: friend } %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= render partial: 'friend_requests/received_friend_requests', locals: { friend_requests: @received_friend_requests } %>
+  <%= render partial: 'friend_requests/sent_friend_requests', locals: { friend_requests: @sent_friend_requests } %>
+</div>

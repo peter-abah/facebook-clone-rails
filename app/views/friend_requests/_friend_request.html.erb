@@ -1,0 +1,10 @@
+<div class="friend-request-container">
+  <%= image_tag friend_request.sender.profile_picture, class: 'friend-request-image' %>
+  <div class="friend-request-info">
+    <p class="friend-request-name">
+      <%= friend_request.sender.name %>
+    </p>
+    <%= link_to 'Confirm', "/friend_requests/accept/#{friend_request.id}", class: "confirm-friend-request friend-request-link" %>
+    <%= link_to 'Delete', "/friend_requests/delete/#{friend_request.id}", class: "delete-friend-request friend-request-link" %>
+  </div>
+</div>

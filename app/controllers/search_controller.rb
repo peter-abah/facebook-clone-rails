@@ -6,6 +6,6 @@ class SearchController < ApplicationController
 
     query = query.downcase
     @posts = Post.where('LOWER(body) LIKE ?', "%#{query}%")
-    @users = User.where('LOWER(name) LIKE ?', "%#{query}%")
+    @users = User.where("LOWER(name) LIKE ? AND id <> #{current_user.id}", "%#{query}%")
   end
 end

@@ -3,7 +3,7 @@
     <% next if comment.id.nil? %>
     
     <div class="comment">
-      <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image' %>
+      <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image comment-user-image' %>
       
       <div class="comment-body">
         <p class="comment-user-name"><%= comment.user.name %></p>

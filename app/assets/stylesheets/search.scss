@@ -6,7 +6,7 @@
 
 .search-container {
   grid-column: 2 / 3;
-  margin: auto;
+  margin: 1rem auto 2rem;
 }
 
 .search-form {
@@ -18,16 +18,16 @@
 .search-bar {
   color: $black-color;
   height: 3rem;
-  width: 30rem;
+  width: 31.25rem;
   border: none;
   font-size: 1.2rem;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   padding: 1rem;
 }
 
 .material-icons.search-icon {
   font-size: 28px;
-  color: $primary-color-dark;
+  color: $primary-color;
 }
 
 .search-bar:focus {
@@ -41,8 +41,17 @@
   position: absolute;
   bottom: .5rem;
   right: .5rem;
+  cursor: pointer;
 }
 
 .search-result-users {
-  margin: 2rem auto;
+  background-color: #FFF;
+  box-shadow: -1px 0px 3px 1px $box-shadow-color;
+  height: 100vh;
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  bottom: 0;
+  width: 25vw;
+  overflow: scroll;
 }

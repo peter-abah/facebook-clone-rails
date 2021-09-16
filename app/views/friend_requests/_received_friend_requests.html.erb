@@ -1,0 +1,18 @@
+<div class="received-friend-requests">
+    <p class="friend-requests-title">
+      Friend Requests
+    </p>
+    
+    <div class="friend-requests-container">
+      <% if friend_requests.empty? %>
+        <p class="no-friend-requests">
+          You have no friend requests
+        </p>
+
+      <% else %>
+        <% friend_requests.each do |friend_request| %>
+          <%= render partial: 'friend_request', locals: { friend_request: friend_request } %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
