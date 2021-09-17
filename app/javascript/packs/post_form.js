@@ -15,6 +15,5 @@ const showImages = (event) => {
 
 const imageInput = document.querySelector('.image-input');
 const imagesDiv = document.querySelector('.post-form-images');
-console.log('in')
+
 imageInput.addEventListener('change', showImages);
-console.log('0ut')

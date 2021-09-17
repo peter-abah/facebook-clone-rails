@@ -3,12 +3,14 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: %i[show edit]
-  get '/friends', to: 'users#friends'
 
   resources :posts do
     resources :comments, only: %i[new create]
     resources :likes, only: %i[create]
   end
+
+  resources :users, only: %i[show edit update]
+  get '/friends', to: 'users#friends'
 
   resources :comments, only: %i[edit update destroy]
   resources :likes, only: %i[destroy]

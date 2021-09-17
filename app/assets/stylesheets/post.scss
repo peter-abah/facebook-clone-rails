@@ -2,7 +2,7 @@
 
 .post-with-comments {
   grid-column: 2 / 3;
-  margin: auto;
+  margin: 1rem auto 0;
 }
 
 .post-container {
@@ -10,8 +10,10 @@
   border-radius: 8px;
   font-family: "Segoe UI", sans-serif;
   width: 31.25rem; // 500px when root font size = 16px
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 1rem 1rem .5rem;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color;
 }
 
 .post-info {
@@ -52,10 +54,6 @@
   grid-auto-flow: column;
 }
 
-.post-images:first-child {
-
-}
-
 .post-image img {
   width: 100%;
   max-height: 25rem;
@@ -67,11 +65,18 @@
   margin-bottom: 0.5rem;
 }
 
-.material-icons {
-  vertical-align: middle;
-}
-
 .comment-button {
   width: 50%;
   text-align: center;
+}
+
+@media screen and (max-width: 33rem) {
+  .post-container {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .post-image img {
+    max-height: 12.5rem;
+  }
 }

@@ -3,10 +3,13 @@
     <% next if comment.id.nil? %>
     
     <div class="comment">
-      <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image comment-user-image' %>
+      <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image-small comment-user-image' %>
       
       <div class="comment-body">
-        <p class="comment-user-name"><%= comment.user.name %></p>
+        <%= link_to comment.user do %>
+          <p class="comment-user-name"><%= comment.user.name %></p>
+        <% end %>
+        
         <p class="comment-text"><%= comment.body %></p>
       </div>
     </div>

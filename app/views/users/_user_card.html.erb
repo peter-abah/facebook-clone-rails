@@ -1,16 +1,19 @@
 <div class="user-card">
-  <%= image_tag user.profile_picture, class: 'user-profile-image friend-profile-image' %>
-  <div class="user-info">
-    <p class="user-name">
-      <%= user.name %>
-    </p>
+  <%= link_to user, class: 'align-center' do %>
+    <%= image_tag user.profile_picture, class: 'user-profile-image-small friend-profile-image' %>
+  <% end %>
+
+  <div class="user-card-info">
+    <%= link_to user, class: 'user-card-name' do %>
+        <%= user.name %>
+    <% end %>
 
     <% if current_user.friend?(user) %>
       <%= material_icon.chat_bubble_outline.css_class('nav-icon sidebar-icon') %>
     <% else %>
       <% if current_user.sent_request?(user) %>
         <%= link_to "friend_requests/delete/#{current_user.friend_request_for_user(user).id}" do %>
-          <%= material_icon.close.css_class('nav-icon sidebar-icon') %>
+          <%= material_icon.delete.css_class('nav-icon sidebar-icon') %>
         <% end %>
 
       <% else %>

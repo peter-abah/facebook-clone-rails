@@ -3,7 +3,8 @@
 .main-nav {
   background-color: #FFF;
   box-shadow: 0 1px 3px 1px $box-shadow-color;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
   height: 4rem;
   justify-content: space-around;
   left: 0;
@@ -13,6 +14,11 @@
   z-index: 10;
 }
 
+.menu-links {
+  padding: .5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 
 .logo-container {
   a {
@@ -23,32 +29,36 @@
   font-weight: 600;
   margin: auto;
   padding-left: 1.2rem;
+}
+
+.menu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-user-links {
+  display: flex;
+  padding: .5rem;
   width: 25%;
 }
 
-.menu-button {
-  margin: auto;
-}
-
-.menu-buttons {
-  padding: .5rem;
-  display: flex;
-  width: 50%; 
-}
-
-.user-buttons {
-  display: flex;
-  padding: .5rem;
-  width: 25%;
-}
-
-.user-button {
+.nav-user-link {
   margin: auto;
 }
 
 .material-icons.nav-icon {
   color: $primary-color-dark;
   font-size: 1.75rem;
+}
+
+.material-icons.user-icon {
+  font-size: 1.5rem;
 }
 
 .logout {
@@ -58,4 +68,37 @@
 .material-icons.logout {
   color: red;
   font-weight: 600;
+}
+
+@media screen and (max-width: 43.75rem) {
+  .main-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .menu-links {
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger-close {
+    display: none;
+  }
+
+  .material-icons.nav-icon {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 27.25rem) {
+  .main-nav {
+    height: 3rem;
+  }
 }

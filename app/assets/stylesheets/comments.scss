@@ -10,6 +10,8 @@
   border-radius: 0 0 8px 8px;
   padding: 1rem;
   margin-bottom: 2rem;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color
 }
 
 .comment-form {
@@ -49,7 +51,7 @@
   cursor: pointer;
 }
 
-.user-profile-image.comment-user-image {
+.user-profile-image-small.comment-user-image {
   align-self: flex-start;
   margin-top: .5rem;
 }
@@ -77,5 +79,6 @@
 .comment-user-name {
   font-weight: 500;
   font-size: .875rem;
-  margin-bottom: 4px;
+  color: $black-color;
+  margin-bottom: .5rem;
 }

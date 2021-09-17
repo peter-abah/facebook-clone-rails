@@ -1,0 +1,66 @@
+<%= render 'shared/nav_bar' %>
+
+<div class="user-page-container">
+  <div class="user-bio-and-images">
+    <div class="gradient-container">
+      <div class="user-display-images">
+        <%= image_tag @user.cover_image, class: 'user-cover-image' %>
+        <%= image_tag @user.profile_picture, class: 'user-profile-image' %>
+      </div>
+    </div>
+
+    <div class="user-bio">
+      <div class="user-info">
+        <p class="user-name"><%= @user.name %></p>
+      </div>
+
+      <div class="user-links">
+        <% if @user == current_user %>
+          <%= link_to edit_user_path, class: 'user-special-link green-bg' do %>
+            <span><%= material_icon.edit %> Edit Profile</span>
+          <% end %>
+
+        <% else %>
+          <% if current_user.friend?(@user) %>
+            <%= link_to '#', class: 'user-special-link light-green-bg' do %>
+              <span><%= material_icon.person_remove %> Unfriend</span>
+            <% end %>
+
+            <%= link_to '#', class: 'user-special-link green-bg' do %>
+              <span><%= material_icon.chat_bubble_outline %> Message</span>
+            <% end %>
+
+          <% else %>
+            <% if current_user.sent_request?(@user) %>
+              <%= link_to "/friend_requests/delete/#{current_user.friend_request_for_user(@user).id}", class: 'user-special-link light-green-bg' do %>
+                <span><%= material_icon.delete %> Delete Request</span>
+              <% end %>
+            <% else %>
+              <%= link_to "/friend_requests/send/#{@user.id}", class: 'user-special-link light-green-bg' do %>
+                <span><%= material_icon.person_add %> Add Friend</span>
+              <% end %>
+            <% end %>
+
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="user-posts-and-friends">
+    <div class="user-friends">
+      <p class="container-title">Friends</p>
+      <% @user.friends.each do |friend| %>
+        <%= render partial: 'user_card', locals: { user: friend } %>
+      <% end %>
+    </div>
+
+    <div class="user-posts">
+      <p class="container-title user-posts-title">Posts</p>
+      <% @user.posts.each do |post| %>
+        <%= render partial: 'posts/post', locals: { post: post } %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -7,31 +7,24 @@
   display: flex;
   padding: 0 1rem;
 }
+
 .user-card:hover {
   background-color: $primary-color-light;
 }
 
-.user-info {
+.user-card-info {
   display: flex;
   flex-grow: 1;
   padding: 1rem 0;
-  margin-left: .5rem;
+  margin-left: 1rem;
 }
 
-.user-name {
+.user-card-name {
   font-size: .9375rem;
   font-weight: 600;
   color: $black-color;
   flex-grow: 1;
-}
-
-.user-profile-image {
-  width: 1.875rem;
-  height: 1.875rem;
-  align-self: center;
-  display: block;
-  border-radius: 50%;
-  vertical-align: middle;
+  padding: .75rem 0;
 }
 
 .friends-container {
@@ -40,13 +33,9 @@
   top: 4rem;
   left: 0;
   bottom: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 24vw;
   background-color: #FFF;
-}
-
-.friend-request-container {
-
 }
 
 .friend-profile-image {

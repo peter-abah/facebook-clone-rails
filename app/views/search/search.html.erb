@@ -6,23 +6,24 @@
   <div class="search-container">
     <%= render 'search_form' %>
 
-    <% if @posts %>
     <div class="search-result-container">
+      <div class="container-titles">
+        <p class="tab-button active" id="posts-tab">Posts</p>
+        <p class="tab-button" id="users-tab">Users</p>
+      </div>
+
       <div class="search-result-posts">
         <% @posts.each do |post| %>
           <%= render partial: 'posts/post', locals: { post: post } %>
         <% end %>
       </div>
     </div>
-  <% end %>
 
-  </div>
-
-  <% if @users %>
-    <div class="search-result-users">
+    <div class="search-result-users hidden">
       <% @users.each do |user| %>
         <%= render partial: 'users/user_card', locals: { user: user } %>
       <% end %>
     </div>
-  <% end %>
+
+  </div>
 </div>

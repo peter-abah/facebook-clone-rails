@@ -1,8 +1,11 @@
 <div class="post-container">
   <div class="post-info">
-    <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image' %>
+    <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image-small' %>
     <div class="post-user">
-      <p class="post-user-name"><%= post.user.name %></p>
+      <%= link_to post.user do %>
+        <p class="post-user-name"><%= post.user.name %></p>
+      <% end %>
+
       <p class="post-time"><%= post_time(post) %> ago</p>
     </div>
   </div>

@@ -1,6 +1,8 @@
 <%= render partial: 'shared/nav_bar' %>
 
-<div class="main-container">
+<div class="grid-two-columns">
   <%= render 'shared/sidebar' %>
   <%= render partial: 'posts', locals: { posts: @posts } %>
 </div>
+
+<%= javascript_pack_tag 'toggle_sidebar' %>

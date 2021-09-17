@@ -17,9 +17,10 @@ class User < ApplicationRecord
                                  dependent: :destroy
 
   has_many :likes
-  has_many :posts
+  has_many :posts, -> { order(updated_at: :desc) }
   has_many :comments
   has_one_attached :profile_picture
+  has_one_attached :cover_image
 
   def all_posts
     friends_posts = friends.reduce([]) { |post_arr, friend| post_arr.concat(friend.posts) }
@@ -51,11 +52,11 @@ class User < ApplicationRecord
   end
 
   def send_request(user)
-    sent_friend_requests.create!(receiver_id: user.id)
+    sent_friend_requests.create!(receiver_id: user.id) unless sent_request?(user)
   end
 
   def accept_request(friend_request)
-    friendships.create!(friend_id: friend_request.sender_id)
+    friendships.create!(friend_id: friend_request.sender_id) unless friend?(friend)
     friend_request.destroy
   end
 
@@ -66,7 +67,7 @@ class User < ApplicationRecord
   end
 
   def remove_friend(friend)
-    friendship = friendships.find_by(friend_id: friend.id) || 
+    friendship = friendships.find_by(friend_id: friend.id) ||
                  inverse_friendships.find_by!(user_id: friend.id)
     friendship.destroy
   end
@@ -81,5 +82,9 @@ class User < ApplicationRecord
 
   def profile_picture
     super.attached? ? super : 'default_profile_image'
+  end
+
+  def cover_image
+    super.attached ? super : 'default_cover_image'
   end
 end

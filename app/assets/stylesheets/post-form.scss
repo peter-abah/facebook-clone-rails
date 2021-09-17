@@ -7,6 +7,9 @@
   justify-self: center;
   width: 31.25rem;
   padding: 1rem;
+  margin: 1rem auto;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color;
 }
 
 .post-form-title {
@@ -17,7 +20,7 @@
 }
 
 .post-form-separator {
-  border: solid  .1px #CCC;
+  border: solid  .1px #ddd;
 }
 
 .post-form {
@@ -27,11 +30,13 @@
 .post-user-info {
   height: 2rem;
   margin-bottom: .5rem;
+  display: flex;
 }
 
 .post-form-user-name {
   font-size: .9375rem;
   font-weight: 500;
+  margin-left: .5rem;
 }
 
 .post-textarea {
@@ -113,3 +118,15 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 43.75rem) {
+  .post-form-container {
+    grid-column: 1 / 2;
+  }
+}
+
+@media screen and (max-width: 32rem) {
+  .post-form-container {
+    width: 100vw;
+    border-radius: 0;
+  }
+}

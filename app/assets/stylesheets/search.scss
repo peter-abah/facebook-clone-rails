@@ -23,6 +23,8 @@
   font-size: 1.2rem;
   border-radius: 1.5rem;
   padding: 1rem;
+  box-shadow: 1px 1px 3px 1px $box-shadow-color,
+              -1px -1px 3px 1px $box-shadow-color;
 }
 
 .material-icons.search-icon {
@@ -47,11 +49,16 @@
 .search-result-users {
   background-color: #FFF;
   box-shadow: -1px 0px 3px 1px $box-shadow-color;
-  height: 100vh;
-  position: fixed;
-  top: 4rem;
-  right: 0;
-  bottom: 0;
-  width: 25vw;
-  overflow: scroll;
+  overflow-y: auto;
+}
+
+.tab-button {
+  text-align: center;
+  padding: .75rem;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background-color: $primary-color-light;
+  color: $black-color;
 }
