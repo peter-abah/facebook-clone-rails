@@ -1,6 +1,6 @@
 <%= render 'shared/nav_bar' %>
 
-<div class="main-container">
+<div class="grid-two-columns">
   <%= render 'shared/sidebar' %>
 
   <div class="search-container">
@@ -13,17 +13,24 @@
       </div>
 
       <div class="search-result-posts">
-        <% @posts.each do |post| %>
-          <%= render partial: 'posts/post', locals: { post: post } %>
+        <% unless @posts.nil? || @posts.empty? %>
+          <% @posts.each do |post| %>
+            <%= render partial: 'posts/post', locals: { post: post } %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="search-result-users hidden">
+        <% unless @users.nil? || @users.empty? %>
+          <% @users.each do |user| %>
+            <%= render partial: 'users/user_card', locals: { user: user } %>
+          <% end %>
         <% end %>
       </div>
     </div>
 
-    <div class="search-result-users hidden">
-      <% @users.each do |user| %>
-        <%= render partial: 'users/user_card', locals: { user: user } %>
-      <% end %>
-    </div>
-
   </div>
 </div>
+
+<%= javascript_pack_tag 'toggle_search_results' %>
+<%= javascript_pack_tag 'toggle_sidebar' %>
