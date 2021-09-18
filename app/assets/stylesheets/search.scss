@@ -64,11 +64,6 @@
   border-radius: .5rem;
 }
 
-.tab-button:hover {
-  background-color: $primary-color-light;
-  color: $black-color;
-}
-
 @media screen and (max-width: 43.75rem) {
   .search-container {
     grid-column: 1 / 2;

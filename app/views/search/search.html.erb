@@ -8,11 +8,11 @@
 
     <div class="search-result-container">
       <div class="container-titles">
-        <p class="tab-button active" id="posts-tab">Posts</p>
-        <p class="tab-button" id="users-tab">Users</p>
+        <p class="tab-button active">Posts</p>
+        <p class="tab-button">Users</p>
       </div>
 
-      <div class="search-result-posts">
+      <div class="search-result-posts tab">
         <% unless @posts.nil? || @posts.empty? %>
           <% @posts.each do |post| %>
             <%= render partial: 'posts/post', locals: { post: post } %>
@@ -20,7 +20,7 @@
         <% end %>
       </div>
 
-      <div class="search-result-users hidden">
+      <div class="search-result-users tab hidden">
         <% unless @users.nil? || @users.empty? %>
           <% @users.each do |user| %>
             <%= render partial: 'users/user_card', locals: { user: user } %>
@@ -32,5 +32,5 @@
   </div>
 </div>
 
-<%= javascript_pack_tag 'toggle_search_results' %>
+<%= javascript_pack_tag 'toggle_tabs' %>
 <%= javascript_pack_tag 'toggle_sidebar' %>

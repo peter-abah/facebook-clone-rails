@@ -49,18 +49,23 @@
   </div>
 
   <div class="user-posts-and-friends">
-    <div class="user-friends">
-      <p class="container-title">Friends</p>
+    <div class="container-titles">
+      <div class="tab-button active">Posts</div>
+      <div class="tab-button">Friends</div>
+    </div>
+
+    <div class="user-friends hidden tab">
       <% @user.friends.each do |friend| %>
         <%= render partial: 'user_card', locals: { user: friend } %>
       <% end %>
     </div>
 
-    <div class="user-posts">
-      <p class="container-title user-posts-title">Posts</p>
+    <div class="user-posts tab">
       <% @user.posts.each do |post| %>
         <%= render partial: 'posts/post', locals: { post: post } %>
       <% end %>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'toggle_tabs' %>

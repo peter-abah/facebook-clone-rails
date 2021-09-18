@@ -30,7 +30,9 @@
   border-radius: 50%;
   position: absolute;
   bottom: -1rem;
-  left: 40%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .user-bio-and-images {
@@ -69,11 +71,8 @@
 }
 
 .user-posts-and-friends {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 50rem;
-  grid-gap: 1rem;
-  margin: auto;
+  margin: 0 auto 2rem;
+  max-width: 31.25rem;
 }
 
 .user-friends {
@@ -91,6 +90,57 @@
   overflow-y: auto;
 }
 
-.user-posts-title {
-  width: 31.25rem;
+@media screen and (max-width: 58.75rem) {
+  .user-cover-image {
+    width: 100vw;
+    height: 40vw;
+  }
+
+  .user-bio {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .user-profile-image {
+    width: 9rem;
+    height: 9rem;
+  }
+}
+
+@media screen and (max-width: 40rem) {
+
+  .user-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 34.375rem) {
+  .user-profile-image {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@media screen and (max-width: 27.25rem) {
+  .user-page-container {
+    margin-top: 3rem;
+  }
+
+  .user-cover-image {
+    height: 50vw;
+  }
+}
+
+@media screen and (max-width: 25rem) {
+  .user-profile-image {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+
+@media screen and (max-width: 22.5rem) {
+  .user-cover-image {
+    height: 60vw;
+  }
 }

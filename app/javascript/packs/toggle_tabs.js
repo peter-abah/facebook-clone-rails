@@ -1,17 +1,13 @@
 'use strict';
 
-const toggleSearchRSesults = function() {
+const toggleTabs = function() {
   const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
-
-  const usersSearchResult = document.querySelector('.search-result-users');
-  const postsSearchResult = document.querySelector('.search-result-posts');
+  const tabs = Array.from(document.querySelectorAll('.tab'))
 
   const toggleTab = (event) => {
     if (event.target.classList.contains('active')) return;
 
-    postsSearchResult.classList.toggle('hidden');
-    usersSearchResult.classList.toggle('hidden');
-    
+    tabs.forEach(tab => { tab.classList.toggle('hidden') });
     tabButtons.forEach(tabButton => { tabButton.classList.toggle('active') });
   };
 
