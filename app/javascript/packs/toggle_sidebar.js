@@ -3,20 +3,13 @@
 const toggleSidebar = function() {
   const sidebar = document.querySelector('.sidebar');
 
-  const hamburgerOpen = document.querySelector('.hamburger-open')
-  const hamburgerClose = document.querySelector('.hamburger-close')
+  const hamburgerButton = document.querySelector('.hamburger');
+  const hamburgericons = Array.from(document.querySelectorAll('.hamburger-icon'));
 
-  hamburgerOpen.addEventListener('click', (event) => {
-    sidebar.style.display = 'block';
+  hamburgerButton.addEventListener('click', (event) => {
+    sidebar.classList.toggle('visible');
 
-    hamburgerOpen.style.display = 'none';
-    hamburgerClose.style.display = 'inline';
+    hamburgericons.forEach(button => { button.classList.toggle('hidden') })
   });
 
-  hamburgerClose.addEventListener('click', (event) => {
-    sidebar.style.display = 'none';
-
-    hamburgerOpen.style.display = 'inline';
-    hamburgerClose.style.display = 'none';
-  });
 }();

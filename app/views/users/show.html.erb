@@ -1,5 +1,9 @@
 <%= render 'shared/nav_bar' %>
 
+<div class="profile-sidebar">
+  <%= render 'shared/sidebar' %>
+</div>
+
 <div class="user-page-container">
   <div class="user-bio-and-images">
     <div class="gradient-container">
@@ -69,3 +73,4 @@
 </div>
 
 <%= javascript_pack_tag 'toggle_tabs' %>
+<%= javascript_pack_tag 'toggle_sidebar' %>

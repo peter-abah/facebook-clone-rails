@@ -28,17 +28,25 @@
 }
 
 .friends-container {
-  grid-column: 1 / 2;
-  position: fixed;
-  top: 4rem;
-  left: 0;
-  bottom: 0;
-  overflow-y: auto;
-  width: 24vw;
+  grid-column: 2 / 3;
+  margin: 1rem auto;
+  width: 31.25rem;
   background-color: #FFF;
+  height: 90%;
 }
 
 .friend-profile-image {
   width: 3.75rem;
   height: 3.75rem;
+}
+
+@media screen and (max-width: 43.75rem) { 
+  .friends-container {
+    grid-column: 1 / 2;
+  }
+}
+@media screen and (max-width: 32rem) {
+  .friends-container {
+    width: 100vw;
+  }
 }

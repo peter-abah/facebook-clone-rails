@@ -1,6 +1,8 @@
 <%= render 'shared/nav_bar' %>
 
-<div class="main-container">
+<div class="grid-two-columns">
+  <%= render 'shared/sidebar' %>
+
   <div class="friends-container">
     <p class="container-title">Friends</p>
     <% if @friends.empty? %>
@@ -13,7 +15,6 @@
       <% end %>
     <% end %>
   </div>
-
-  <%= render partial: 'friend_requests/received_friend_requests', locals: { friend_requests: @received_friend_requests } %>
-  <%= render partial: 'friend_requests/sent_friend_requests', locals: { friend_requests: @sent_friend_requests } %>
 </div>
+
+<%= javascript_pack_tag 'toggle_sidebar' %>

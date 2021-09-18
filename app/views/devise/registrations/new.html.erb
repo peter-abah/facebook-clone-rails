@@ -37,6 +37,12 @@
           <%= f.submit 'Sign up', class: 'login-field login-button' %>
         </div>
       <% end %>
+
+      <div class="login-separator"></div>
+
+      <div>
+        <%= link_to "Sign in", new_session_path(resource_name), class: 'second-link' %>
+      </div>
     </div>
   </div>
 </div>

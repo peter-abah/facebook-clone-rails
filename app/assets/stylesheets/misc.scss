@@ -20,6 +20,10 @@
   display: none;
 }
 
+.visible {
+  display: block !important;
+}
+
 .material-icons {
   vertical-align: middle;
 }
@@ -67,9 +71,22 @@
   grid-template-rows: 1fr;
 }
 
+.tab-button {
+  text-align: center;
+  padding: .75rem;
+  cursor: pointer;
+  border-radius: .5rem;
+}
+
 @media screen and (max-width: 43.75rem) {
   .grid-two-columns {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 32rem) {
+  .tab-button {
+    border-radius: 0;
   }
 }
 

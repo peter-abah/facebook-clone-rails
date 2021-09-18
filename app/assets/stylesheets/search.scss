@@ -57,13 +57,6 @@
   border-radius: .5rem;
 }
 
-.tab-button {
-  text-align: center;
-  padding: .75rem;
-  cursor: pointer;
-  border-radius: .5rem;
-}
-
 @media screen and (max-width: 43.75rem) {
   .search-container {
     grid-column: 1 / 2;
@@ -77,10 +70,6 @@
 
   .search-result-users {
     width: 100vw;
-    border-radius: 0;
-  }
-
-  .tab-button {
     border-radius: 0;
   }
 }

@@ -7,36 +7,28 @@
 
 
   <nav class="menu-links">
-    <div class="menu-link">
-      <%= link_to root_path do %>
-        <%= material_icon.home.css_class('nav-icon') %>
-      <% end %>
-    </div>
+    <%= link_to root_path, class: 'menu-link' do %>
+      <%= material_icon.home.css_class('nav-icon') %>
+    <% end %>
 
-    <div class="menu-link">
-      <%= link_to '/search' do %>
-        <%= material_icon.search.css_class('nav-icon') %>
-      <% end %>
-    </div>
+    <%= link_to '/search', class: 'menu-link' do %>
+      <%= material_icon.search.css_class('nav-icon') %>
+    <% end %>
 
-    <div class="menu-link">
-      <%= link_to '#' do %>
-        <%= material_icon.notifications.css_class('nav-icon') %>
-      <% end %>
-    </div>
+    <%= link_to '#', class: 'menu-link' do %>
+      <%= material_icon.notifications.css_class('nav-icon') %>
+    <% end %>
 
-    <div class="menu-link">
-      <%= link_to '/friends' do %>
-        <%= material_icon.people.css_class('nav-icon') %>
-      <% end %>
-    </div>
+    <%= link_to '/friends', class: 'menu-link' do %>
+      <%= material_icon.people.css_class('nav-icon') %>
+    <% end %>
 
     <div class="menu-link hamburger">
-      <span class="hamburger-open">
+      <span class="hamburger-icon">
         <%= material_icon.menu.css_class('nav-icon') %>
       </span>
 
-      <span class="hamburger-close">
+      <span class="hamburger-icon hidden">
         <%= material_icon.close.css_class('nav-icon') %>
       </span>
     </div>
