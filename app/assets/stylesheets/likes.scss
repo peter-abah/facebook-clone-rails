@@ -15,7 +15,7 @@
   cursor: pointer;
 }
 
-.like-button-form:hover {
+.like-button-form:active {
   color: $secondary-color-dark;
 }
 
@@ -28,6 +28,6 @@
   color: $primary-color;
 }
 
-.like-button-link a:hover, .comment-button a:hover {
+.like-button-link a:active, .comment-button a:active {
   color: $primary-color-dark;
 }

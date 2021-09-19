@@ -1,7 +1,7 @@
 'use strict';
 
 const toggleTabs = function() {
-  const tabButtons = Array.from(document.querySelectorAll('.tab-button'));
+  const tabButtons = Array.from(document.querySelectorAll('.js-toggle-tab'));
   const tabs = Array.from(document.querySelectorAll('.tab'))
 
   const toggleTab = (event) => {

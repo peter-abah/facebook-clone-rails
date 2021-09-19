@@ -8,18 +8,19 @@
         <%= user.name %>
     <% end %>
 
-    <% if current_user.friend?(user) %>
-      <%= material_icon.chat_bubble_outline.css_class('nav-icon sidebar-icon') %>
-    <% else %>
-      <% if current_user.sent_request?(user) %>
-        <%= link_to "friend_requests/delete/#{current_user.friend_request_for_user(user).id}" do %>
-          <%= material_icon.delete.css_class('nav-icon sidebar-icon') %>
-        <% end %>
+    <% if current_user.sent_request_to?(user) %>
+      <%= link_to "friend_requests/delete/#{current_user.friend_request_for_user(user).id}" do %>
+        <%= material_icon.delete.css_class('nav-icon sidebar-icon') %>
+      <% end %>
 
-      <% else %>
-        <%= link_to "friend_requests/send/#{user.id}" do %>
-          <%= material_icon.person_add.css_class('nav-icon sidebar-icon') %>
-        <% end %>
+    <% elsif current_user.received_request_from?(user) %>
+      <%= link_to "friend_requests/accept/#{current_user.friend_request_for_user(user).id}" do %>
+        <%= material_icon.check.css_class('nav-icon sidebar-icon') %>
+      <% end %>
+
+    <% elsif !current_user.friend?(user) %>
+      <%= link_to "friend_requests/send/#{user.id}" do %>
+        <%= material_icon.person_add.css_class('nav-icon sidebar-icon') %>
       <% end %>
     <% end %>
   </div>

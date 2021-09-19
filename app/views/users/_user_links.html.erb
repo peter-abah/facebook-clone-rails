@@ -1,0 +1,33 @@
+<div class="user-links">
+  <% if user == current_user %>
+    <%= link_to edit_user_path, class: 'user-special-link green-bg' do %>
+      <span><%= material_icon.edit %> Edit Profile</span>
+    <% end %>
+
+  <% else %>
+    <% if current_user.friend?(user) %>
+      <%= link_to '#', class: 'user-special-link light-green-bg' do %>
+        <span><%= material_icon.person %> Unfriend</span>
+      <% end %>
+
+    <% else %>
+      <% if current_user.request_exists_for?(user) %>
+        <% if current_user.received_request_from?(user) %>
+          <%= link_to "/friend_requests/accept/#{current_user.friend_request_for_user(user).id}", class: 'user-special-link light-green-bg' do %>
+            <span><%= material_icon.check %> Accept Request</span>
+          <% end %>
+        <% end %>
+
+        <%= link_to "/friend_requests/delete/#{current_user.friend_request_for_user(user).id}", class: 'user-special-link light-green-bg' do %>
+          <span><%= material_icon.delete %> Delete Request</span>
+        <% end %>
+        
+      <% else %>
+        <%= link_to "/friend_requests/send/#{user.id}", class: 'user-special-link light-green-bg' do %>
+          <span><%= material_icon.person_add %> Add Friend</span>
+        <% end %>
+      <% end %>
+
+    <% end %>
+  <% end %>
+</div>

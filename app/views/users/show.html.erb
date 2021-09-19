@@ -18,44 +18,15 @@
         <p class="user-name"><%= @user.name %></p>
       </div>
 
-      <div class="user-links">
-        <% if @user == current_user %>
-          <%= link_to edit_user_path, class: 'user-special-link green-bg' do %>
-            <span><%= material_icon.edit %> Edit Profile</span>
-          <% end %>
-
-        <% else %>
-          <% if current_user.friend?(@user) %>
-            <%= link_to '#', class: 'user-special-link light-green-bg' do %>
-              <span><%= material_icon.person_remove %> Unfriend</span>
-            <% end %>
-
-            <%= link_to '#', class: 'user-special-link green-bg' do %>
-              <span><%= material_icon.chat_bubble_outline %> Message</span>
-            <% end %>
-
-          <% else %>
-            <% if current_user.sent_request?(@user) %>
-              <%= link_to "/friend_requests/delete/#{current_user.friend_request_for_user(@user).id}", class: 'user-special-link light-green-bg' do %>
-                <span><%= material_icon.delete %> Delete Request</span>
-              <% end %>
-            <% else %>
-              <%= link_to "/friend_requests/send/#{@user.id}", class: 'user-special-link light-green-bg' do %>
-                <span><%= material_icon.person_add %> Add Friend</span>
-              <% end %>
-            <% end %>
-
-          <% end %>
-        <% end %>
-      </div>
+      <%= render partial: 'user_links', locals: { user: @user } %>
     </div>
     
   </div>
 
   <div class="user-posts-and-friends">
     <div class="container-titles">
-      <div class="tab-button active">Posts</div>
-      <div class="tab-button">Friends</div>
+      <div class="tab-button js-toggle-tab active">Posts</div>
+      <div class="tab-button js-toggle-tab">Friends</div>
     </div>
 
     <div class="user-friends hidden tab">

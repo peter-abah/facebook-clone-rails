@@ -35,28 +35,36 @@ class User < ApplicationRecord
     friends.include?(user)
   end
 
-  def sent_request?(friend)
-    sent_friend_requests.exists?(receiver_id: friend.id) || received_friend_requests.exists?(sender_id: friend.id)
+  def friends
+    friendships.map(&:friend) + inverse_friendships.map(&:user)
   end
 
   def friend_requests
     sent_friend_requests + recieved_friend_requests
   end
 
-  def friends
-    friendships.map(&:friend) + inverse_friendships.map(&:user)
-  end
-
   def friend_request_for_user(user)
     sent_friend_requests.find_by(receiver_id: user.id) || received_friend_requests.find_by(sender_id: user.id)
   end
 
+  def sent_request_to?(user)
+    sent_friend_requests.exists?(receiver_id: user.id)
+  end
+
+  def received_request_from?(user)
+    received_friend_requests.exists?(sender_id: user.id)
+  end
+
+  def request_exists_for?(user)
+    sent_request_to?(user) || received_request_from?(user)
+  end
+
   def send_request(user)
-    sent_friend_requests.create!(receiver_id: user.id) unless sent_request?(user)
+    sent_friend_requests.create!(receiver_id: user.id) unless request_exists_for?(user) || friend?(user)
   end
 
   def accept_request(friend_request)
-    friendships.create!(friend_id: friend_request.sender_id) unless friend?(friend)
+    friendships.create!(friend_id: friend_request.sender_id) unless friend?(friend_request.sender)
     friend_request.destroy
   end
 

@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
   root 'posts#index'
 
+  get '/search', to: 'search#search'
+
   devise_for :users
-  resources :users, only: %i[show edit]
 
   resources :posts do
     resources :comments, only: %i[new create]
     resources :likes, only: %i[create]
   end
 
-  resources :users, only: %i[show edit update]
-  get '/friends', to: 'users#friends'
-
   resources :comments, only: %i[edit update destroy]
   resources :likes, only: %i[destroy]
 
-  get '/search', to: 'search#search'
+  resources :users, only: %i[show edit update]
+  get '/friends', to: 'users#friends'
   
+  resources :friend_requests, only: %i[index] 
   get '/friend_requests/accept/:id', to: 'friend_requests#accept_request'
   get '/friend_requests/delete/:id', to: 'friend_requests#delete_request'
   get '/friend_requests/send/:id', to: 'friend_requests#send_request'

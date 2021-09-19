@@ -1,0 +1,28 @@
+<%= render 'shared/nav_bar' %>
+
+<div class="grid-two-columns">
+  <%= render 'shared/sidebar' %>
+
+  <div class="friend-requests-container">
+    <p class="friend-requests-title">
+      Friend Requests
+    </p>
+
+    <div class="friend-requests-toggles">
+      <p class="friend-requests-toggle active-link">Received friend requests</p>
+      <p class="friend-requests-toggle">Sent friend requests</p>
+    </div>
+
+    <div class="friend-request-tab">
+      <%= render partial: 'received_friend_requests', locals: { friend_requests: @received_friend_requests } %>
+    </div>
+
+    <div class="friend-request-tab hidden">
+      <%= render partial: 'sent_friend_requests', locals: { friend_requests: @sent_friend_requests } %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'toggle_tabs' %>
+<%= javascript_pack_tag 'toggle_sidebar' %>
+<%= javascript_pack_tag 'toggle_friend_requests' %>

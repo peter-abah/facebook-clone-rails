@@ -78,7 +78,7 @@
   font-size: 1.2rem;
 }
 
-.login-button:hover {
+.login-button:active {
   background-color: $primary-color-dark;
   cursor: pointer;
 }
@@ -105,7 +105,7 @@
   width: 11rem;
 }
 
-.sign-up-link:hover {
+.sign-up-link:active {
   background-color: $secondary-color-dark;
   cursor: pointer;
 }
