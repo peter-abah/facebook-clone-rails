@@ -44,6 +44,8 @@
   border-radius: .5rem;
   margin-bottom: 1rem;
   background-color: #fff;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color;
 }
 
 .user-intro-container .container-title {
@@ -126,7 +128,7 @@
     height: 40vw;
   }
 
-  .user-bio {
+  .user-info-bio {
     width: 100vw;
   }
 }

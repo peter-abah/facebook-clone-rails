@@ -1,0 +1,83 @@
+@import 'variables';
+
+.edit-account-container {
+  width: 30rem;
+  grid-column: 2 / 3;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: .5rem;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color;
+}
+
+.edit-account-container .container-title {
+  padding: 0;
+  margin: 0 auto .5rem;
+  width: fit-content;
+}
+
+.edit-account-form {
+  margin-bottom: 1rem;
+}
+
+.edit-account-field {
+  padding: 1rem 0;
+  border-bottom: solid 1px #ddd;
+}
+
+.edit-account-field div {
+  margin-bottom: .5rem;
+}
+
+.edit-account-field h2 {
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.edit-account-text-field {
+  border: 0;
+  border-bottom: 1px solid $black-color;
+  width: 55%;
+  margin-left: .5rem;
+  padding: .2rem;
+}
+
+.edit-account-field-info {
+  font-size: .875rem;
+  color: $primary-color-dark;
+  margin-top: .2rem;
+}
+
+.edit-account-button {
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: .5rem;
+  width: 10rem;
+  height: 2rem;
+  border: none;
+  margin: auto;
+  display: block;
+  color: #fff;
+}
+
+.edit-account-submit {
+  background-color: $primary-color;
+}
+
+.cancel-account {
+  background-color: red;
+}
+
+@media screen and (max-width: 43.75rem) {
+  .edit-account-container {
+    grid-column: 1 / 2;
+  }
+}
+
+@media screen and (max-width: 31.25rem) {
+  .edit-account-container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
