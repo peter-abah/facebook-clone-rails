@@ -1,0 +1,109 @@
+@import 'variables';
+
+.edit-profile {
+  grid-column: 2 / 3;
+  background-color: #fff;
+  margin: 2rem auto;
+  border-radius: .5rem;
+  padding: 1rem;
+  width: 31.25rem;
+  box-shadow: -1px -1px 3px 1px $box-shadow-color,
+              1px 1px 3px 1px $box-shadow-color;
+}
+
+.edit-profile-field {
+  margin: 1rem auto;
+}
+
+.edit-profile-image {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.edit-profile-image img {
+  height: 10.5rem;
+  width: 10.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-cover-image img {
+  height: 12.5rem;
+  width: 100%;
+  border-radius: .5rem;
+  object-fit: cover;
+}
+
+.user-image-field-label {
+  display: block;
+  padding: .5rem 1rem;
+  border-radius: .5rem;
+  margin-left: auto;
+  margin-top: .5rem;
+  background-color: $primary-color-light;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.edit-profile-field .container-title {
+  padding: 0;
+  margin-bottom: .5rem;
+}
+
+.edit-profile-field input, .edit-profile-field textarea, .edit-profile-field select {
+  padding: .5rem;
+  font-size: 1.2rem;
+}
+
+.edit-text-field input {
+  border: none;
+  border-bottom: 1px solid;
+  width: 100%;
+}
+
+.edit-profile-field textarea {
+  width: 100%;
+  height: 10rem;
+  resize: none;
+}
+
+.edit-profile-submit {
+  margin-top: 1rem;
+  display: block;
+  font-weight: 600;
+  border: none;
+  color: white;
+  background-color: $primary-color;
+  width: 10rem;
+  margin: auto;
+  border-radius: .5rem;
+}
+
+@media screen and (max-width: 59.375rem) {
+  .edit-profile {
+    width: 27rem;
+  }
+}
+
+@media screen and (max-width: 50rem) {
+  .edit-profile {
+    width: 24rem;
+  }
+}
+
+@media screen and (max-width: 43.75rem) {
+  .edit-profile {
+    grid-column: 1 / 2;
+  }
+}
+
+@media screen and (max-width: 31.25rem) {
+  .edit-profile {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .edit-profile-field input, .edit-profile-field textarea, .edit-profile-field select, .edit-profile-field .container-title {
+    font-size: 1rem;
+  }
+}

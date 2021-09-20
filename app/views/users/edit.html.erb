@@ -1,0 +1,91 @@
+<%= render 'shared/nav_bar' %>
+
+<div class="grid-two-columns">
+  <%= render 'shared/sidebar' %>
+
+  <div class="edit-profile">
+    <%= form_with model: @user, class: 'edit-profile-form' do |f| %>
+      <div class="edit-profile-field">
+        <p class="container-title">
+          Profile Picture
+        </p>
+
+        <div class="edit-profile-image">
+          <%= image_tag @user.profile_picture %>
+        </div>
+
+        <%= f.label :profile_picture, 'Upload Photo', class: 'user-image-field-label' %>
+        <%= f.file_field :profile_picture, accept: 'image/*', class: 'hidden profile-pic-input' %>
+      </div>
+
+      <div class="edit-profile-field">
+        <p class="container-title">
+          Cover Image
+        </p>
+
+        <div class="edit-cover-image">
+          <%= image_tag @user.cover_image %>
+        </div>
+
+        <%= f.label :cover_image, 'Upload Photo', class: 'user-image-field-label' %>
+        <%= f.file_field :cover_image, accept: 'image/*', class: 'hidden cover-image-input' %>
+      </div>
+
+      <div class="edit-profile-field">
+        <div class="container-title">
+          <%= f.label :first_name %>
+        </div>
+
+        <div class="edit-text-field">
+          <%= f.text_field :first_name, maxlength: 25, required: true %>
+        </div>
+      </div>
+
+      <div class="edit-profile-field">
+        <div class="container-title">
+          <%= f.label :last_name %>
+        </div>
+
+        <div class="edit-text-field">
+          <%= f.text_field :last_name, maxlength: 25, required: true %>
+        </div>
+      </div>
+
+      <div class="edit-profile-field">
+        <div class="container-title">
+          <%= f.label :bio %>
+        </div>
+
+        <div class="edit-text-area">
+          <%= f.text_area :bio, placeholder: 'Describe yourself in less than 125 words', maxlength: 150 %>
+        </div>
+      </div>
+
+      <div class="edit-profile-field">
+        <div class="container-title">
+          <%= f.label :birthday %>
+        </div>
+
+        <%= select_month @user.birthday %>
+        <%= select_day @user.birthday %>
+      </div>
+
+      <div class="edit-profile-field">
+        <div class="container-title">
+          <%= f.label :current_city %>
+        </div>
+
+        <div class="edit-text-field">
+          <%= f.text_field :current_city, maxlength: 25 %>
+        </div>
+      </div>
+
+      <div class="edit-profile-field">
+        <%= f.submit 'Save', class: 'edit-profile-submit' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'toggle_sidebar' %>
+<%= javascript_pack_tag 'show_profile_form_images' %>

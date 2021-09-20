@@ -13,9 +13,10 @@
       </div>
     </div>
 
-    <div class="user-bio">
+    <div class="user-info-bio">
       <div class="user-info">
         <p class="user-name"><%= @user.name %></p>
+        <p class="user-bio"><%= @user.bio %></p>
       </div>
 
       <%= render partial: 'user_links', locals: { user: @user } %>
@@ -24,6 +25,30 @@
   </div>
 
   <div class="user-posts-and-friends">
+    <div class="user-intro-container">
+      <p class="container-title">Intro</p>
+
+      <div class="user-intro">
+        <% unless user_info_exists?(@user) %>
+          <p class="user-intro-child">No info to show</p>
+        <% end %>
+
+        <% unless @user.birthday.nil? %>
+          <p class="user-intro-child">
+            <span class="user-intro-title">Birthday:</span> 
+            <%= @user.birthday.strftime("%b %e") %>
+          </p>
+        <% end %>
+
+        <% unless @user.current_city.nil? || @user.current_city.empty? %>
+          <p class="user-intro-child">
+            <span class="user-intro-title">Current city:</span>
+            <%= @user.current_city %>
+          </p>
+        <% end %>
+      </div>  
+    </div>
+
     <div class="container-titles">
       <div class="tab-button js-toggle-tab active">Posts</div>
       <div class="tab-button js-toggle-tab">Friends</div>

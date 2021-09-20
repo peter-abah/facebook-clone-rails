@@ -39,12 +39,32 @@
   margin: 0 auto;
 }
 
+.user-intro-container {
+  padding: 1rem;
+  border-radius: .5rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+}
+
+.user-intro-container .container-title {
+  padding: 0;
+  margin-bottom: .5rem;
+}
+
+.user-intro-child {
+  margin-bottom: .5rem;
+}
+
+.user-intro-title {
+  font-weight: bold;
+}
+
 .user-bio-and-images {
   background-color: #FFF;
   box-shadow: -1px 0 3px 1px $box-shadow-color;
 }
 
-.user-bio {
+.user-info-bio {
   margin: 0 auto;
   width: 58.75rem;
   padding-top: 1.5rem;
@@ -53,6 +73,12 @@
 .user-name {
   font-size: 2rem;
   font-weight: 600;
+  text-align: center;
+}
+
+.user-bio {
+  margin: .5rem auto;
+  max-width: 27rem;
   text-align: center;
 }
 

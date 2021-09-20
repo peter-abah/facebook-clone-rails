@@ -1,6 +1,6 @@
 <div class="post-container">
   <div class="post-info">
-    <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image-small' %>
+    <%= image_tag post.user.profile_picture, size: '30x30', class: 'user-profile-image-small' %>
     <div class="post-user">
       <%= link_to post.user do %>
         <p class="post-user-name"><%= post.user.name %></p>

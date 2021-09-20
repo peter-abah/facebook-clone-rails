@@ -2,7 +2,6 @@
 
 const showFormImages = function() { 
   const showImages = (event) => {
-    console.log('www')
     imagesDiv.innerHTML = '';
 
     for (let file of event.target.files) {

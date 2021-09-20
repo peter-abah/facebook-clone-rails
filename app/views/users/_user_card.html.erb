@@ -13,12 +13,7 @@
         <%= material_icon.delete.css_class('nav-icon sidebar-icon') %>
       <% end %>
 
-    <% elsif current_user.received_request_from?(user) %>
-      <%= link_to "friend_requests/accept/#{current_user.friend_request_for_user(user).id}" do %>
-        <%= material_icon.check.css_class('nav-icon sidebar-icon') %>
-      <% end %>
-
-    <% elsif !current_user.friend?(user) %>
+    <% elsif !current_user.friend?(user) && current_user != user %>
       <%= link_to "friend_requests/send/#{user.id}" do %>
         <%= material_icon.person_add.css_class('nav-icon sidebar-icon') %>
       <% end %>

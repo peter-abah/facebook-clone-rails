@@ -1,6 +1,6 @@
 <div class="user-links">
   <% if user == current_user %>
-    <%= link_to edit_user_path, class: 'user-special-link green-bg' do %>
+    <%= link_to edit_user_path(user), class: 'user-special-link green-bg' do %>
       <span><%= material_icon.edit %> Edit Profile</span>
     <% end %>
 

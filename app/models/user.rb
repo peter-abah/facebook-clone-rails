@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
+  validates :first_name, presence: true, length: { maximum: 25 }
+  validates :last_name, presence: true, length: { maximum: 25 }
+  validates :current_city, length: { maximum: 25 }
+  validates :bio, length: { maximum: 150 }
 
   has_many :sent_friend_requests, class_name: 'FriendRequest',
                                   foreign_key: :sender_id, dependent: :destroy
@@ -21,6 +24,10 @@ class User < ApplicationRecord
   has_many :comments
   has_one_attached :profile_picture
   has_one_attached :cover_image
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 
   def all_posts
     friends_posts = friends.reduce([]) { |post_arr, friend| post_arr.concat(friend.posts) }
@@ -93,6 +100,6 @@ class User < ApplicationRecord
   end
 
   def cover_image
-    super.attached ? super : 'default_cover_image'
+    super.attached? ? super : 'default_cover_image'
   end
 end
