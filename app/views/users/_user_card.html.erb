@@ -1,6 +1,6 @@
 <div class="user-card">
   <%= link_to user, class: 'align-center' do %>
-    <%= image_tag user.profile_picture, class: 'user-profile-image-small friend-profile-image' %>
+    <%= image_tag user.profile_picture.variant(resize_to_limit: [200, 200]), class: 'user-profile-image-small friend-profile-image' %>
   <% end %>
 
   <div class="user-card-info">

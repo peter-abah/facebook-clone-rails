@@ -25,6 +25,8 @@ class User < ApplicationRecord
   has_one_attached :profile_picture
   has_one_attached :cover_image
 
+  before_create :set_default_images
+
   def name
     "#{first_name} #{last_name}"
   end
@@ -95,11 +97,13 @@ class User < ApplicationRecord
     likes.find_by(post_id: post.id)
   end
 
-  def profile_picture
-    super.attached? ? super : 'default_profile_image'
-  end
+  private
 
-  def cover_image
-    super.attached? ? super : 'default_cover_image'
-  end
+    def set_default_images
+      file = File.open("#{Rails.root}/app/assets/images/default_profile_image.jpg")
+      profile_picture.attach(io: file, filename: "profile_picture", content_type: 'image/jpg')
+
+      file = File.open("#{Rails.root}/app/assets/images/default_cover_image.jpg")
+      cover_image.attach(io: file, filename: "cover_image.jpg", content_type: 'image/jpg')
+    end
 end

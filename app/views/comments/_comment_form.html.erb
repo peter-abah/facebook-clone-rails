@@ -1,6 +1,6 @@
 <%= form_with model: [post, post.comments.build ], class: 'comment-form' do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= image_tag current_user.profile_picture, size: '30x30', class: 'user-profile-image-small comment-user-image' %>
+  <%= image_tag current_user.profile_picture.variant(resize_to_limit: [200, 200]), class: 'user-profile-image-small comment-user-image' %>
   
   <div class="comment-input-field">
     <%= f.text_area :body, placeholder: 'Share your thoughts', class: 'comment-text-area' %>
