@@ -124,6 +124,7 @@ class User < ApplicationRecord
 
   private
 
+    # sets default profile image and cover image for new user
     def set_default_images
       file = File.open("#{Rails.root}/app/assets/images/default_profile_image.jpg")
       profile_picture.attach(io: file, filename: "profile_picture", content_type: 'image/jpg')

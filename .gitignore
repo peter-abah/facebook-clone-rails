@@ -40,3 +40,5 @@ yarn-debug.log*
 
 # ignore local ssl key
 /localhost.*
+
+/config/cloudinary.yml
