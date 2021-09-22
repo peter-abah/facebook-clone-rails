@@ -34,5 +34,8 @@ module SocialMedia
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # force server to go through https
+    config.force_ssl = true
   end
 end

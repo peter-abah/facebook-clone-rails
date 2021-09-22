@@ -25,7 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.8'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'material_icons'
-
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 

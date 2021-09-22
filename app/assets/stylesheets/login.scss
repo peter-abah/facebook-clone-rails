@@ -76,11 +76,12 @@
   background-color: $primary-color;
   font-weight: bold;
   font-size: 1.2rem;
+  display: block;
+  cursor: pointer;
 }
 
 .login-button:active {
   background-color: $primary-color-dark;
-  cursor: pointer;
 }
 
 .login-separator {
@@ -102,12 +103,16 @@
   justify-content: center;
   margin: auto;
   text-decoration: none;
-  width: 11rem;
+  width: 13rem;
+  cursor: pointer;
+}
+
+.sign-up-link {
+  cursor: pointer;
 }
 
 .sign-up-link:active {
   background-color: $secondary-color-dark;
-  cursor: pointer;
 }
 
 .login-error-message {
