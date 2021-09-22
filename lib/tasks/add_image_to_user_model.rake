@@ -12,8 +12,6 @@ namespace :users do
 
         user.profile_picture.attach(io: file, filename: filename)
       end
-
-      users.each { |user| puts(user.id, user.profile_picture.attached?) }
     end
 
     desc "Add default profile image to users without a profile image"
@@ -29,8 +27,6 @@ namespace :users do
         user.cover_image.attach(io: file, filename: filename)
         user.save
       end
-
-      users.each { |user| puts(user.id, user.cover_image.attached?) }
     end
   end
 end
