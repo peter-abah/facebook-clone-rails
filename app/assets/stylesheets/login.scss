@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2rem 3rem 3rem 0;
+  margin: 3rem 3rem 3rem 0;
   padding: 1rem;
 }
 
@@ -145,7 +145,7 @@
 }
 
 
-@media screen and (max-height: 30rem) {
+@media screen and (max-height: 40rem) {
   .login-parent {
     height: 100%;
   }

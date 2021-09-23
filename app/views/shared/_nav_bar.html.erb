@@ -1,7 +1,7 @@
 <nav class="main-nav">
   <div class="logo-container">
     <%= link_to root_path do %>
-      <p class="logo">Social media</p>
+      <p class="logo">Odin book</p>
     <% end %>
   </div>
 
@@ -15,12 +15,12 @@
       <%= material_icon.search.css_class('nav-icon') %>
     <% end %>
 
-    <%= link_to '#', class: 'menu-link' do %>
-      <%= material_icon.notifications.css_class('nav-icon') %>
-    <% end %>
-
     <%= link_to '/friends', class: 'menu-link' do %>
       <%= material_icon.people.css_class('nav-icon') %>
+    <% end %>
+
+    <%= link_to current_user, class: 'menu-link' do %>
+      <%= image_tag current_user.profile_picture.variant(resize_to_limit: [200, 200]), class: 'user-profile-image-small' %>
     <% end %>
 
     <div class="menu-link hamburger">
