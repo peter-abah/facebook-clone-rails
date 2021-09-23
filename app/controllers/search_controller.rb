@@ -4,7 +4,7 @@ class SearchController < ApplicationController
 
     render :search && return if query.nil? || query.empty?
 
-    users_sql = "LOWER(CONCAT(first_name, last_name)) LIKE ? AND id <> #{current_user.id}"
+    users_sql = "LOWER(CONCAT(first_name, last_name)) LIKE ?"
     query = query.downcase
 
     @posts = Post.where('LOWER(body) LIKE ?', "%#{query}%").order(updated_at: :desc)
