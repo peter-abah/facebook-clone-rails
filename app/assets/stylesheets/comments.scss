@@ -82,3 +82,10 @@
   color: $black-color;
   margin-bottom: .5rem;
 }
+
+@media screen and (max-width: 32rem) {
+  .comments-and-form {
+    width: 100%;
+    border-radius: 0;
+  }
+}
